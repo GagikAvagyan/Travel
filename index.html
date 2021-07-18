@@ -51,7 +51,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="nav_mobile_items" id="NavMobileItems">
+        <div class="nav_mobile_items hide" id="NavMobileItems">
             <a href="#">
                 <img src="./images/Logo.png" alt="">
             </a>
@@ -495,15 +495,17 @@
             x.classList.toggle("change");
         }
 
-        var x = document.getElementById("NavMobileItems");
+        var x = $('#NavMobileItems');
 
         $("#NavBarOpen").click(function(){
             
-            if (x.style.right === "0%") {
-                x.style.right = "100%";
-            } else {
-                x.style.right = "0%";
-            }
+           if(x.hasClass('show')){
+                x.removeClass('show');
+                x.addClass('hide');
+           } else {
+                x.removeClass('hide');
+                x.addClass('show');
+           }
         })
 
        
